@@ -7,12 +7,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * This class defines the security that will be applied to our REST API.
  */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    private static final Logger LOGGER = Logger.getLogger(WebSecurityConfig.class.getName());
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
